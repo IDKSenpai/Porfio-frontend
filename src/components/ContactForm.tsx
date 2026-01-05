@@ -2,10 +2,11 @@ import React, { useState, useRef } from "react";
 import { Turnstile } from "@marsidev/react-turnstile";
 import { Icons } from "../icons/Icon";
 import api from "../api/axios";
+import type { TurnstileInstance } from "@marsidev/react-turnstile"; // or whatever package you're using
 
 const ContactForm: React.FC = () => {
   const IconPlane = Icons.plane;
-  const turnstileRef = useRef<any>(null);
+  const turnstileRef = useRef<TurnstileInstance>(null);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<
